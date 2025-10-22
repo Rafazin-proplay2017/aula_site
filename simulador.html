@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Orçamento Mensal</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="background"></div>
+
+  <header>
+    <h1>💸 Simulador de Orçamento Mensal</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="simulador.html" class="active">Simulador</a></li>
+        <li><a href="dicas.html">Dicas</a></li>
+        <li><a href="infograficos.html">Infográficos</a></li>
+        <li><a href="glossario.html">Glossário</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>🧮 Calcule seu Orçamento Mensal</h2>
+      <p>Preencha os campos abaixo com seus ganhos e despesas e descubra se o seu mês fecha no azul ou no vermelho!</p>
+
+      <form id="simuladorForm">
+        <div class="form-group">
+          <label for="renda">💵 Receita Mensal (R$):</label>
+          <input type="number" id="renda" placeholder="Ex: 2500" required>
+        </div>
+
+        <div class="form-group">
+          <label for="alimentacao">🍽️ Alimentação (R$):</label>
+          <input type="number" id="alimentacao" placeholder="Ex: 600" required>
+        </div>
+
+        <div class="form-group">
+          <label for="transporte">🚗 Transporte (R$):</label>
+          <input type="number" id="transporte" placeholder="Ex: 300" required>
+        </div>
+
+        <div class="form-group">
+          <label for="moradia">🏠 Moradia (R$):</label>
+          <input type="number" id="moradia" placeholder="Ex: 800" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lazer">🎮 Lazer (R$):</label>
+          <input type="number" id="lazer" placeholder="Ex: 200" required>
+        </div>
+
+        <div class="form-group">
+          <label for="outros">🛒 Outras despesas (R$):</label>
+          <input type="number" id="outros" placeholder="Ex: 150" required>
+        </div>
+
+        <button type="button" class="btn" onclick="calcularOrcamento()">Calcular</button>
+      </form>
+
+      <div id="resultado" class="resultado"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desenvolvido por <strong>Rafael de Oliveira</strong> — Projeto de Informática 2025</p>
+  </footer>
+</body>
+</html>

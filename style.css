@@ -1,0 +1,240 @@
+/* ===== Fundo animado futurista ===== */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 30%, #004aad, #001b44);
+  background-size: 200% 200%;
+  animation: moveGradient 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Layout geral ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px #00bfff;
+}
+
+/* ===== Menu ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #00bfff;
+  transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* ===== Seção de introdução ===== */
+main {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.intro {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+}
+
+.intro h2 {
+  color: #00bfff;
+  text-shadow: 0 0 8px #00bfff;
+}
+
+/* ===== Botões ===== */
+.btn {
+  display: inline-block;
+  background-color: #00bfff;
+  color: #001b44;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  transition: 0.4s;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #004aad;
+  box-shadow: 0 0 20px #00bfff;
+  transform: scale(1.08);
+}
+
+/* ===== Cards ===== */
+.cards, .cards-dicas, .glossario-cards, .charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 2rem auto 3rem;
+  padding: 0 1rem;
+}
+
+.card, .dica-card, .glossario-card, .chart-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  transition: 0.4s;
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.2);
+  text-align: center;
+}
+
+.card:hover, .dica-card:hover, .glossario-card:hover, .chart-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
+}
+
+.card h3, .dica-card h3, .glossario-card h3, .chart-card h3 {
+  color: #00bfff;
+  text-shadow: 0 0 6px #00bfff;
+  margin-bottom: 0.5rem;
+}
+
+.card p, .dica-card p, .glossario-card p {
+  color: #e6f3ff;
+  font-size: 0.95rem;
+}
+
+/* ===== Simulador ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #00bfff;
+}
+
+input {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+input::placeholder {
+  color: #cce6ff;
+}
+
+input:focus {
+  box-shadow: 0 0 8px #00bfff;
+}
+
+.resultado {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  transition: 0.4s;
+}
+
+/* ===== Gráficos CSS ===== */
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  gap: 0.5rem;
+}
+
+.bar {
+  width: 40px;
+  background-color: rgba(0, 191, 255, 0.6);
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding-bottom: 0.2rem;
+  transition: 0.3s;
+}
+
+.bar:hover {
+  background-color: #00bfff;
+  transform: scale(1.1);
+}
+
+.bar.alimentacao { background-color: rgba(0, 191, 255, 0.7); }
+.bar.transporte { background-color: rgba(0, 255, 127, 0.7); }
+.bar.moradia { background-color: rgba(255, 215, 0, 0.7); }
+.bar.lazer { background-color: rgba(255, 105, 180, 0.7); }
+.bar.outros { background-color: rgba(255, 69, 0, 0.7); }
+
+/* ===== Rodapé ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  color: #d9e8ff;
+}
